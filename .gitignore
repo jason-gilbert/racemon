@@ -1,0 +1,6 @@
+racemon
+racemon.profile
+gmon.out
+*.swp
+archive
+race.log
