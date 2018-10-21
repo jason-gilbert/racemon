@@ -4,13 +4,14 @@ VID_DEVICE="$1"
 
 v4l2-ctl -d $VID_DEVICE -c white_balance_temperature_auto=0
 v4l2-ctl -d $VID_DEVICE -c white_balance_temperature=4000
-v4l2-ctl -d $VID_DEVICE -c gain=1000
+v4l2-ctl -d $VID_DEVICE -c gain=0
+# 1 is manual 3 is auto exposure
 v4l2-ctl -d $VID_DEVICE -c exposure_auto=1
 v4l2-ctl -d $VID_DEVICE -c exposure_absolute=200
 v4l2-ctl -d $VID_DEVICE -c pan_absolute=0
 v4l2-ctl -d $VID_DEVICE -c tilt_absolute=0
 v4l2-ctl -d $VID_DEVICE -c focus_auto=0
 # can't set when auto focus enabled, absolute 0 is far focus
-v4l2-ctl -d $VID_DEVICE -c focus_absolute=20
+v4l2-ctl -d $VID_DEVICE -c focus_absolute=10
 v4l2-ctl -d $VID_DEVICE -c zoom_absolute=0
 

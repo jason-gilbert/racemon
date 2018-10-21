@@ -766,12 +766,12 @@ run_capture(void *data)
     cd->image2[1] = new_image(cd->width, cd->height, 4);
     cd->rindex = 0;
 
-    image *finish_line = new_image(16, 128, 1);
+    image *finish_line = new_image(64, 256, 1);
     image *bg_finish_line = new_image_like(finish_line);
     image *initial_bg_finish_line = new_image_like(finish_line);
     image *tmp_finish_line = new_image_like(finish_line);
     int finish_line_x = cam_width/2 - finish_line->width/2;
-    int finish_line_y = cam_height - finish_line->height - 1;
+    int finish_line_y = cam_height - finish_line->height - 32;
     bool finish_line_active = false;
     // if the background has been mixed enough and the finish line should be
     // checked
@@ -1171,15 +1171,6 @@ main(int argc, char *argv[])
 
     SDL_SetEventFilter(sdl_filter, NULL);
 
-    struct capture_data capture_data = {};
-    capture_data.mutex = SDL_CreateMutex();
-    capture_data.fd = cam_fd;
-    capture_data.buffers = buffers;
-    capture_data.width = cam_width;
-    capture_data.height = cam_height;
-
-    SDL_Thread *capture_thread = SDL_CreateThread(run_capture, "capture", &capture_data);
-
     SDL_Surface *sshot = NULL;
 
     SDL_Texture *texture1 = SDL_CreateTexture(renderer, SDL_PIXELFORMAT_YV12, SDL_TEXTUREACCESS_STREAMING, cam_width, cam_height);
@@ -1226,6 +1217,15 @@ main(int argc, char *argv[])
     u64 end_count;
     u64 elapsed_count;
 
+
+    struct capture_data capture_data = {};
+    capture_data.mutex = SDL_CreateMutex();
+    capture_data.fd = cam_fd;
+    capture_data.buffers = buffers;
+    capture_data.width = cam_width;
+    capture_data.height = cam_height;
+
+    SDL_Thread *capture_thread = SDL_CreateThread(run_capture, "capture", &capture_data);
 
 
     // XXXXXXXXXXXXXXXXXXX Begin Main Loop XXXXXXXXXXXXXXXXXXX
