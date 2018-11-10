@@ -1,6 +1,6 @@
 # Race Monitor
 
-Prototype to time races for diyrobocar.com.  Not user friendly.  Also an
+Prototype to time races for (diyrobocar.com).  Not user friendly.  Also an
 experiment to practice C and implement everything with minimal dependencies.
 
 Only dependencies are Linux and SDL2.
