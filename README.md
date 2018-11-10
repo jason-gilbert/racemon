@@ -15,11 +15,12 @@ Only dependencies are Linux and SDL2.
 
 <img src="screenshot.jpg" width="75%" alt="Screenshot">
 
-The program should start fullscreen with the color image on the right and a BW
-image on the left with the real-time finish line and background finish line in
-the top left corner.  The percentage of changed pixels from the background is
-shown below the real-time finish line.  The white rectangle on the color image
-is the finish line area and should turn green when motion is detected.
+The program should start fullscreen with the color image on the right and a
+grayscale image on the left with the real-time finish line and background
+finish line in the top left corner.  The percentage of changed pixels from the
+background is shown below the real-time finish line.  The white rectangle on
+the color image is the finish line area and should turn green when motion is
+detected.
 
 Once a something is detected crossing the finish line, the timer will start.
 Currently tracks 3 laps, total time, and marks fastest lap.
