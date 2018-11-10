@@ -769,7 +769,6 @@ run_capture(void *data)
 
     image *finish_line = new_image(64, 256, 1);
     image *bg_finish_line = new_image_like(finish_line);
-    image *initial_bg_finish_line = new_image_like(finish_line);
     image *tmp_finish_line = new_image_like(finish_line);
     int finish_line_x = cam_width/2 - finish_line->width/2;
     int finish_line_y = cam_height - finish_line->height - 32;
@@ -850,7 +849,6 @@ run_capture(void *data)
 
             if (need_bg_frames == 0 && !finish_line_valid) {
                 finish_line_valid = true;
-                copy_image(bg_finish_line, initial_bg_finish_line);
             }
 
             //debugf("background frame.  remaining: %d", need_bg_frames);
@@ -899,8 +897,6 @@ run_capture(void *data)
             copy_rect_image(finish_line->width, finish_line->height, finish_line, 0, 0, write1_image, x, y);
             x += bg_finish_line->width + 2;
             copy_rect_image(finish_line->width, finish_line->height, bg_finish_line, 0, 0, write1_image, x, y);
-            x += bg_finish_line->width + 2;
-            copy_rect_image(finish_line->width, finish_line->height, initial_bg_finish_line, 0, 0, write1_image, x, y);
             //draw_rect(write1_image, 0, 0, finish_line->width, finish_line->height, highlight);
             draw_rect(write1_image, finish_line_x, finish_line_y, finish_line->width, finish_line->height, highlight);
             draw_rect(write2_image, finish_line_x, finish_line_y, finish_line->width, finish_line->height, highlight);
