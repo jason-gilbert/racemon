@@ -1,11 +1,14 @@
 # Race Monitor
 
-Prototype to time races for diyrobocar.com.  Not user friendly.  Only dependency is SDL2.
+Prototype to time races for diyrobocar.com.  Not user friendly.  Also an
+experiment to practice C and implement everything with minimal dependencies.
+
+Only dependencies are Linux and SDL2.
 
 # Running
 
-- Check out the repository
-- Install gcc
+- Checkout the repository
+- Install GCC (only complier tested)
 - Install SDL2 dev library (sudo apt install libsdl2-dev on Ubuntu 16.04)
 - a camera that supports V4L2 and YUYV (possibly all webcams)
 - Run "./qc" from the project dir which will build and run
@@ -36,6 +39,8 @@ Currently tracks 3 laps, total time, and marks fastest lap.
 - Run median filter on finish line (too slow for whole image on my machine)
 - At startup, 60 frames are averaged to build up a background of the finish line
 - Once the background is valid, percentage of different pixels is calculated
+- Occasional mixes in new background frames, but unclear that it's useful.
+  Particularly in well lit environments
 
 # Known Issues
 - Initially, the finish line was narrower and fast moving cars could pass
@@ -51,3 +56,8 @@ Currently tracks 3 laps, total time, and marks fastest lap.
 - If limited/no buffer around the finish line area and the track boundary,
   poorly driving cars may "pass" the finish line outside the track.  Up to you
   if this is an actual problem.
+
+# Unknown Issues
+- Probably many related to limited C programming experience;)
+- Better algorithms
+- Better implementation of algorithms
