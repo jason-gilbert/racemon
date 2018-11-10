@@ -10,7 +10,7 @@ Prototype to time races for diyrobocar.com.  Not user friendly.  Only dependency
 - a camera that supports V4L2 and YUYV (possibly all webcams)
 - Run "./qc" from the project dir which will build and run
 
-[screenshot.jpg]
+[Screenshot](screenshot.jpg)
 
 The program should start fullscreen with the color image on the right and a BW
 image on the left with the real-time finish line and background finish line in
