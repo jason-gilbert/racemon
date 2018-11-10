@@ -13,7 +13,7 @@ Only dependencies are Linux and SDL2.
 - a camera that supports V4L2 and YUYV (possibly all webcams)
 - Run "./qc" from the project dir which will build and run
 
-![Screenshot](screenshot.jpg)
+<img src="screenshot.jpg" width="75%" alt="Screenshot">
 
 The program should start fullscreen with the color image on the right and a BW
 image on the left with the real-time finish line and background finish line in
