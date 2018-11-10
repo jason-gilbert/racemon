@@ -1,5 +1,6 @@
-//#define _POSIX_SOURCE 1 /* POSIX compliant source */
-//#define _POSIX_C_SOURCE 200809L /* POSIX compliant source */
+// prototype for timing races using motion detection at the "finish line" area.
+// It's not user friendly.  Modify finish_line_x and finish_line_y to move
+// the finish line.
 
 #include <assert.h>
 #include <errno.h>

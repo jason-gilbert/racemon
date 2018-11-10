@@ -1,5 +1,11 @@
 #!/bin/sh
 
+# setup the camera.   These are probably not great for every environment or
+# camera.  config/calibration needs to be integrated into code.  If using
+# consistent lighting this probably doesn't matter much.  Auto exposure can
+# adversely affect the framerate depending on the camera.  haven't explored the
+# options much.
+
 VID_DEVICE="$1"
 
 v4l2-ctl -d $VID_DEVICE -c white_balance_temperature_auto=0
