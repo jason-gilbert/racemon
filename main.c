@@ -588,7 +588,7 @@ int draw_int(image *img, int x, int y, int size, const color *fg, int n)
 {
     char text[16];
     snprintf(text, 16, "%d", n);
-    return draw_text(img, x, y, size, fg, text);
+    return draw_shadow_text(img, x, y, size, fg, text);
 }
 
 // Integer operation of ITU-R standard for YCbCr(8 bits per channel) to RGB888
