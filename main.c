@@ -336,7 +336,7 @@ void
 median_channel(image *a, image *b, const int r, const int channel)
 {
     assert(a->n_pixels == b->n_pixels);
-    assert(a->channels = b->channels);
+    assert(a->channels == b->channels);
 
     //u64 start = SDL_GetPerformanceCounter();
 
